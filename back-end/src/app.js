@@ -17,11 +17,13 @@ app.use(morgan(morganOption))
 app.use(helmet())
 app.use(cors())
 
+//app.use(express.json())
+//app.post("/foo", (req, res) => { res.json(req.body) });
+
 app.get("/", (req, res) => res.json({hello: "universe"}));
 
 app.use(authMiddleware)
 app.use('/api', bookmarkRouter)
-//app.use('/api', listRouter)
 
 app.use(function errorHandler(error, req, res, next) {
   let response
