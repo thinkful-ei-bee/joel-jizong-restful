@@ -26,10 +26,10 @@ class AddBookmark extends Component {
     // get the form fields from the event
     const { title, url, description, rating } = e.target
     const bookmark = {
-      title: title.value,
-      url: url.value,
-      description: description.value,
-      rating: Number(rating.value),
+      bookmark_title: title.value,
+      bookmark_url: url.value,
+      bookmark_desc: description.value,
+      bookmark_rating: Number(rating.value),
     }
     this.setState({ error: null })
     fetch(config.API_ENDPOINT, {
